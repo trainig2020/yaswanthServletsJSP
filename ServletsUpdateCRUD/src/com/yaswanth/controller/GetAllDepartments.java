@@ -35,7 +35,7 @@ public class GetAllDepartments extends HttpServlet {
 		HttpSession Session = request.getSession();
 		Session.setAttribute("getalldept1", getalldept);
 		
-		RequestDispatcher dispatcher1 = request.getRequestDispatcher("alldepartments.jsp");
+		RequestDispatcher dispatcher1 = request.getRequestDispatcher("home.jsp");
 		dispatcher1.forward(request, response);
 	}
 

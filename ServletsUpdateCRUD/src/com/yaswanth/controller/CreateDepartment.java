@@ -32,6 +32,7 @@ public class CreateDepartment extends HttpServlet {
 		String dname = request.getParameter("DeptName");
 		Department department = new Department(deptid, dname);
 		DepartmentService.createDepartment(department);
+		
 
 		ServletContext servletContext = getServletContext();
 		RequestDispatcher requestDispatcher = servletContext

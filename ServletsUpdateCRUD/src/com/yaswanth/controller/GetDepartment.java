@@ -23,15 +23,18 @@ public class GetDepartment extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int deptid =Integer.parseInt(request.getParameter("DeptID"));
 	     Department dept=DepartmentService.getDepartment(deptid);
-	     
-		 request.setAttribute("department", dept);
+	      request.setAttribute("department", dept);
+		 
+		 
 		 
 		 HttpSession session = request.getSession();
+		
+		
 		 List<Department> lst= (List<Department>) session.getAttribute("getAllDept1");
 		 
 		 request.setAttribute("getalldept1", lst);
 		 
-		 RequestDispatcher dispatcher = request.getRequestDispatcher("alldepartments.jsp");
+		 RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
 		 dispatcher.forward(request, response);
 	}
 
